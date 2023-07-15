@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default ({ close }) => {
   const [name, setUsername] = useState("");
@@ -9,7 +11,7 @@ export default ({ close }) => {
   const [userId, setUserId] = useState("");
   //const { loginUser } = useContext(UserContext);
   //const [errorMessage, setErrorMessage] = useState("");
-
+  const navigate = useNavigate();
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -46,63 +48,26 @@ export default ({ close }) => {
       sessionStorage.setItem("userId", user.id);
       sessionStorage.setItem("userName", user.name);
       loginUser(user.name, user.pass);
-      alert("User logged in!");
+      toast.success("User logged in!");
+      // alert("User logged in!");
       // Perform any additional actions, such as updating state or redirecting
     } else {
       // Authentication failed
-      alert("Login failed");
+      toast.error("Login failed");
+      //  alert("Login failed");
       // Handle the error accordingly, e.g., display an error message
     }
+
     setPassword("");
     setUsername("");
     setError2("");
     setError1("");
   };
-  console.log(sessionStorage.getItem("userName"));
-  //  const handleLogin = async (e) => {
-  //   e.preventDefault();
+  //console.log(sessionStorage.getItem("userName"));
 
-  //   // Create a request body with the name and password
-  //   const requestBody = { name, pass };
-
-  //   try {
-  //     const response = await fetch("http://localhost:9999/User", {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-
-  //     if (response.ok) {
-  //       const users = await response.json();
-
-  //       // Find a user with the provided email and password
-  //       const user = users.find((u) => u.name === name && u.pass === pass);
-
-  //       if (user) {
-  //         // Store the user ID and email in sessionStorage
-  //         sessionStorage.setItem("userId", user.id);
-  //         sessionStorage.setItem("userName", user.name);
-
-  //         // Call loginUser function from UserContext
-  //         loginUser(user.name, user.pass);
-  //       } else {
-  //         setErrorMessage("Invalid email or password");
-  //       }
-  //     } else {
-  //       const errorData = await response.json();
-  //       setErrorMessage(errorData.message || "Login failed");
-  //     }
-  //   } catch (error) {
-  //     console.error("An error occurred during login", error);
-  //     setErrorMessage("An error occurred during login");
-  //   }
-  // };
   return (
     <div>
-      <a className="close" onClick={close}>
-        &times;
-      </a>
+      <a className="close" onClick={close}></a>
       <div className="d-flex justify-content-center">
         <div className="card" style={{ width: "800px" }}>
           <div className="card-header text-left">
@@ -142,16 +107,9 @@ export default ({ close }) => {
                   // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 />
               </div>
-              <div className="text-center">
-                {" "}
-                <button
-                  type="submit"
-                  style={{ width: "150px" }}
-                  className=" btn btn-success "
-                >
-                  Login
-                </button>
-              </div>
+              <button type="submit" className=" btn btn-success ">
+                Login
+              </button>
             </form>
           </div>
         </div>

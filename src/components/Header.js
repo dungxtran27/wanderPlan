@@ -14,7 +14,9 @@ export default function Header() {
       <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/destination">Destination</Link>
+        <Link to="/Destination">Destination</Link>
+        <Link to="/Accomodation">Accomodation</Link>
+        <Link to="/Transportation">Transport</Link>
         <Link to="/contact">Contact</Link>
       </nav>
       <div className="auth-links">
