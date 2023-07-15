@@ -1,22 +1,20 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import Home from './screens/Home';
-import Header from './components/Header';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Home from "./screens/Home";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <Container>
-      <BrowserRouter>
-        {/* Header Template */}
-        <Header/>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-        </Routes>
+    <BrowserRouter>
+      {/* Header Template */}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
 
-        {/* Footer Template */}
-      </BrowserRouter>
-    </Container>
+      {/* Footer Template */}
+    </BrowserRouter>
   );
 }
 
