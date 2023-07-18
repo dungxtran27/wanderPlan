@@ -6,7 +6,7 @@ export default function Header() {
         <div className="row" id="header">
             <div className="logo-section">
                 <Link to="/">
-                    <img src="/Logo.jpg" alt="Logo" style={{ height: '47px' }} />
+                    <img src="/img/Logo.jpg" alt="Logo" style={{ height: '47px' }} />
                 </Link>
             </div>
             <nav className="nav-links">
