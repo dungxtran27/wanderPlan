@@ -10,7 +10,7 @@ import DestinationDetail from "./components/DestinationDetail";
 import AccomodationDetail from "./components/AccomodationDetail";
 import Accomodation from "./components/Accomodation";
 import Transportation from "./components/Transportation";
-//toast.configure();
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -31,9 +31,9 @@ function App() {
           element={<AccomodationDetail />}
         />
       </Routes>
-
-      {/* Footer Template */}
-    </BrowserRouter>
+        {/* Footer Template */}
+        <Footer/>
+      </BrowserRouter>
   );
 }
 
