@@ -3,7 +3,7 @@ import '../styles/Default.css';
 
 export default function Header() {
     return (
-        <div className="row" id="header">
+        <div id="header">
             <div className="logo-section">
                 <Link to="/">
                     <img src="/Logo.jpg" alt="Logo" style={{ height: '47px' }} />
