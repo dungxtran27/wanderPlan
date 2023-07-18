@@ -28,6 +28,7 @@
 
 .nav-links a:hover {
     color: white;
+    text-decoration: none;
 }
 
 .auth-links {
@@ -128,7 +129,12 @@
     gap: 10px;
 }
 
-height: 40px;
+.loginbtn {
+    display: inline-block;
+    border-radius: 100px;
+    background: #FFF;
+    width: 121px;
+    height: 40px;
     line-height: 40px; /* To vertically center the text */
     text-align: center; /* To horizontally center the text */
     font-weight: bold;
