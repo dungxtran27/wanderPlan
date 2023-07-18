@@ -48,19 +48,22 @@
     color: white;
 }
 
-.auth-links .login-button {
+.loginbtn {
     display: inline-block;
     border-radius: 100px;
     background: #FFF;
     width: 121px;
-    height: 47px;
-    line-height: 47px; /* To vertically center the text */
+    height: 40px;
+    line-height: 40px; /* To vertically center the text */
     text-align: center; /* To horizontally center the text */
     font-weight: bold;
     color: #000;
     transition: background-color 0.3s ease; /* Smooth background color transition */
   }
   
-  .auth-links .login-button:hover {
+   .loginbtn:hover {
     background-color: rgba(255, 255, 255, 0.6);
+  }
+  .cardtxt{
+    
   }
