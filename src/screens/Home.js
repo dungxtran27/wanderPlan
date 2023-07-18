@@ -1,8 +1,32 @@
 import { Col, Row } from 'react-bootstrap';
 import Banner from '../components/Banner';
 import '../styles/Home.css';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
+    const [posts, setPosts] = useState([]);
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/Post')
+            .then(resp => resp.json())
+            .then(data => {
+                setPosts(data);
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
+    }, []);
+
+    const nextPost = () => {
+        setCurrent(current => (current + 1) % posts.length);
+    }
+
+    const prevPost = () => {
+        setCurrent(current => (current - 1 + posts.length) % posts.length);
+    }
+
     const services = [
         {
             title: "Affordable Prices",
@@ -55,10 +79,41 @@ export default function Home() {
 
             <div className="home">
                 <div className="left-side">
-                    <h1 style={{width:'332px'}}>Destinations <br />Most Popular</h1>
+                    <h1 style={{ width: '332px' }}>Destinations <br />Most Popular</h1>
                 </div>
-                <div className="mid-content">Some of the most popular destinations for <br/>
-                    you visit with a view the beautiful one.</div>
+                <div className="mid-content">Some of the most popular destinations for <br />
+                    you visit with a view the beautiful one.
+                </div>
+                <div className="circle-button">
+                    <button className="circle-button-white" onClick={prevPost}>
+                        <img src="/img/arrowleft.png" alt="arrow" />
+                    </button>
+                </div>
+                <div className="circle-button" style={{ marginLeft: '12px' }}>
+                    <button className="circle-button-black" onClick={nextPost}>
+                        <img src="/img/arrowright.png" alt="arrow" />
+                    </button>
+                </div>
+            </div>
+
+            <div className="home">
+                <div className='post-container'>
+                    {posts.slice(current, current + 5).map(post => (
+                        <div key={post.id} className="card" style={{ borderRadius: '30px', border: 'none' }}>
+                            <img src={post.postImg} alt={post.name} />
+                            <div className="card-content">
+                                <h2>{post.name}</h2>
+                                <p>{post.content}</p>
+                                <div className="card-footer" style={{ borderBottomLeftRadius: '30px', borderBottomRightRadius: '30px', border: 'none' }}>
+                                    <p>Price: <span>{post.price}</span></p>
+                                    <Link to="/booking">
+                                        <button>Book Ticket</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
