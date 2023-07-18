@@ -14,13 +14,13 @@ const Profile = () => {
   const currDob = sessionStorage.getItem("currDob");
 
   const [user, setUser] = useState([]);
-  // useEffect(() => {
-  //   fetch(" http://localhost:9999/User")
-  //     .then((resp) => resp.json())
-  //     .then((data) => {
-  //       setUser(data);
-  //     });
-  // }, [currId]);
+  useEffect(() => {
+    fetch(" http://localhost:9999/User/" + currId)
+      .then((resp) => resp.json())
+      .then((data) => {
+        setUser(data);
+      });
+  }, [currId]);
   const logout = () => {
     sessionStorage.removeItem("currId");
     sessionStorage.removeItem("currName");
@@ -32,14 +32,6 @@ const Profile = () => {
     sessionStorage.removeItem("currDob");
     sessionStorage.removeItem("currPhone");
   };
-  console.log(sessionStorage.getItem("currId"));
-  console.log(sessionStorage.getItem("currName"));
-  console.log(sessionStorage.getItem("currRole"));
-  console.log(sessionStorage.getItem("currAvt"));
-  console.log(sessionStorage.getItem("currEmail"));
-  console.log(sessionStorage.getItem("currPhone"));
-  console.log(sessionStorage.getItem("currAddress"));
-  console.log(sessionStorage.getItem("currDob"));
   return (
     <Container>
       {currRole == null ? (
@@ -52,13 +44,17 @@ const Profile = () => {
           <h1 className="text-center">you must login to view profile</h1>
         </div>
       ) : (
-        <Row>
+        <Row style={{ margin: "100px auto" }}>
           <Col className="col-md-4">
-            <Image src={currAvt} roundedCircle style={{ height: "100px" }} />
-            <h1>{currName}</h1>
+            <Image
+              src={user.avatar}
+              roundedCircle
+              style={{ height: "100px" }}
+            />
+            <h1>{user.name}</h1>
 
             {currRole == 1 ? (
-              <button onClick={logout}>
+              <button className="btn btn-primary" onClick={logout}>
                 <Link className="text-white" to="/User">
                   Management
                 </Link>
@@ -68,14 +64,23 @@ const Profile = () => {
             )}
           </Col>
           <Col className="col-md-8">
-            <h2>Email: {currEmail}</h2>
-            <h2>Address: {currAddress}</h2>
-            <h2>Phone Number: {currPhone}</h2>
-            <h2>Date of birth{currDob}</h2>
+            <h2>Email: {user.email}</h2>
+            <h2>Address: {user.address}</h2>
+            <h2>Phone Number: {user.phone}</h2>
+            <h2>Date of birth: {user.dob}</h2>
 
-            <button onClick={logout} className="btn btn-danger">
+            <button
+              onClick={logout}
+              style={{ marginRight: "20px" }}
+              className="btn btn-danger"
+            >
               <Link className="text-white" to="/">
                 Logout
+              </Link>
+            </button>
+            <button className="btn btn-warning">
+              <Link className="text-white" to="/changepass">
+                change password
               </Link>
             </button>
           </Col>

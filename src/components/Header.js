@@ -2,8 +2,16 @@ import { Link } from "react-router-dom";
 import "../styles/Default.css";
 import Login from "./Login";
 import Popup from "reactjs-popup";
+import { useEffect, useState } from "react";
+import { Person } from "react-bootstrap-icons";
 
 export default function Header() {
+  const [currId, setCurrId] = useState(null);
+
+  useEffect(() => {
+    setCurrId(sessionStorage.getItem("currId"));
+  }, [sessionStorage.getItem("currId")]);
+
   return (
     <div id="header">
       <div className="logo-section">
@@ -17,14 +25,21 @@ export default function Header() {
         <Link to="/Destination">Destination</Link>
         <Link to="/Accomodation">Accomodation</Link>
         <Link to="/Transportation">Transport</Link>
-        <Link to="/profile">Profile</Link>
       </nav>
       <div className="auth-links">
-        <Link to="/register">Register</Link>
-
-        <Popup modal trigger={<button className="loginbtn">Login</button>}>
-          {(close) => <Login close={close} />}
-        </Popup>
+        {currId == null ? (
+          <span>
+            {" "}
+            <Link to="/register">Register</Link>
+            <Popup modal trigger={<button className="loginbtn">Login</button>}>
+              {(close) => <Login close={close} />}
+            </Popup>
+          </span>
+        ) : (
+          <Link to="/profile">
+            <Person style={{ width: "50px", height: "40px" }}></Person>
+          </Link>
+        )}
       </div>
     </div>
   );

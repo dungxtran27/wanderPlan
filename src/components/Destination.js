@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Container, Row } from "react-bootstrap";
-import "../styles/Default.css";
+//import "../styles/Default.css";
 import { Link } from "react-router-dom";
 
 const Destination = () => {

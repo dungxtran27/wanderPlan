@@ -10,12 +10,11 @@ import DestinationDetail from "./components/DestinationDetail";
 import AccomodationDetail from "./components/AccomodationDetail";
 import Accomodation from "./components/Accomodation";
 import Transportation from "./components/Transportation";
-
+import Footer from "./components/Footer";
 import TransportDetail from "./components/TransportDetail";
 import Profile from "./components/Profile";
+import Changepass from "./components/Changepass";
 //toast.configure();
-
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -40,6 +39,7 @@ function App() {
           element={<TransportDetail />}
         />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/changepass" element={<Changepass />} />
       </Routes>
       {/* Footer Template */}
       <Footer />
