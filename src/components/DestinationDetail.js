@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Image, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 const DestinationDetail = () => {
@@ -30,9 +30,17 @@ const DestinationDetail = () => {
   }, []);
   return (
     <Container>
-      <h1>{d.name}</h1>
-      <img src={d.img} />
-      <p>{d.description}</p>
+      <Row>
+        <div className="col-md-6">
+          <Image thumbnail src={d.img} />
+        </div>
+        <div className="col-md-6">
+          <h1>{d.name}</h1>
+
+          <p>{d.description}</p>
+        </div>
+      </Row>
+
       <Row>
         <div className="col-6">
           <h4>accomodation</h4>

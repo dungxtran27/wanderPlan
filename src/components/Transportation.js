@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Transportation = () => {
   const [transport, setTransport] = useState([]);
@@ -76,19 +77,24 @@ const Transportation = () => {
             </option>
           ))}
         </select>
-        <button onClick={handleSort}>sort price</button>
+        <button className="btn btn-primary" onClick={handleSort}>
+          sort price
+        </button>
       </Row>
       <Row>
-        <Table>
+        <Table striped>
           <thead className="thead-dark">
             <td>name</td>
             <td>type</td>
             <td>price</td>
           </thead>
+
           <tbody>
             {filter.map((t) => (
               <tr key={t.id}>
-                <td>{t.name}</td>
+                <td>
+                  <Link to={"/Transportation/detail/" + t.id}>{t.name}</Link>
+                </td>
                 <td>{type.map((y) => (t.type === y.id ? y.name : ""))}</td>
                 <td>{t.price}</td>
               </tr>

@@ -45,16 +45,33 @@ export default ({ close }) => {
 
     if (user) {
       // User authenticated successfully
-      sessionStorage.setItem("userId", user.id);
-      sessionStorage.setItem("userName", user.name);
+      sessionStorage.setItem("currId", user.id);
+      sessionStorage.setItem("currName", user.name);
+      sessionStorage.setItem("currRole", user.role);
+      sessionStorage.setItem("currAvt", user.avatar);
+      sessionStorage.setItem("currEmail", user.email);
+      sessionStorage.setItem("currPhone", user.phone);
+      sessionStorage.setItem("currAddress", user.address);
+      sessionStorage.setItem("currDob", user.dob);
       loginUser(user.name, user.pass);
-      toast.success("User logged in!");
-      // alert("User logged in!");
+      //toast.success("User logged in!");
+      alert("User logged in!");
+      console.log(sessionStorage.getItem("currId"));
+      console.log(sessionStorage.getItem("currName"));
+      console.log(sessionStorage.getItem("currRole"));
+      console.log(sessionStorage.getItem("currAvt"));
+      console.log(sessionStorage.getItem("currEmail"));
+      console.log(sessionStorage.getItem("currPhone"));
+      console.log(sessionStorage.getItem("currAddress"));
+      console.log(sessionStorage.getItem("currDob"));
+      close();
       // Perform any additional actions, such as updating state or redirecting
     } else {
       // Authentication failed
-      toast.error("Login failed");
-      //  alert("Login failed");
+      // toast.error("Login failed");
+      alert("Login failed");
+      close();
+
       // Handle the error accordingly, e.g., display an error message
     }
 
@@ -67,7 +84,6 @@ export default ({ close }) => {
 
   return (
     <div>
-      <a className="close" onClick={close}></a>
       <div className="d-flex justify-content-center">
         <div className="card" style={{ width: "800px" }}>
           <div className="card-header text-left">
@@ -107,7 +123,7 @@ export default ({ close }) => {
                   // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 />
               </div>
-              <button type="submit" className=" btn btn-success ">
+              <button type="submit" className="btn btn-success ">
                 Login
               </button>
             </form>

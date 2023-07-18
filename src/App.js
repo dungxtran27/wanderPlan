@@ -10,6 +10,8 @@ import DestinationDetail from "./components/DestinationDetail";
 import AccomodationDetail from "./components/AccomodationDetail";
 import Accomodation from "./components/Accomodation";
 import Transportation from "./components/Transportation";
+import TransportDetail from "./components/TransportDetail";
+import Profile from "./components/Profile";
 //toast.configure();
 
 function App() {
@@ -30,6 +32,11 @@ function App() {
           path="/Accomodation/detail/:cId"
           element={<AccomodationDetail />}
         />
+        <Route
+          path="/Transportation/detail/:tId"
+          element={<TransportDetail />}
+        />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
 
       {/* Footer Template */}

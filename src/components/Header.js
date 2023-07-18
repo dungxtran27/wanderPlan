@@ -17,7 +17,7 @@ export default function Header() {
         <Link to="/Destination">Destination</Link>
         <Link to="/Accomodation">Accomodation</Link>
         <Link to="/Transportation">Transport</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/profile">Profile</Link>
       </nav>
       <div className="auth-links">
         <Link to="/register">Register</Link>
