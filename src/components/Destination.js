@@ -82,13 +82,18 @@ const Destination = () => {
           //           d.description.toLowerCase().includes(searchtext.toLowerCase())))
           // )
           .map((d) => (
-            <Card className=" col-4" border="info">
+            <Card style={{ height: "580px" }} className=" col-4" border="info">
               <Card.Title>
                 <Link to={"/Destination/detail/" + d.id}>{d.name}</Link>
               </Card.Title>
               <Card.Body>
                 <Card.Img src={d.img} />
-                <Card.Text style={{ height: "200px", overflow: "auto" }}>
+                <Card.Text
+                  style={{
+                    height: "200px",
+                    overflow: "hidden",
+                  }}
+                >
                   {d.description}
                 </Card.Text>
               </Card.Body>

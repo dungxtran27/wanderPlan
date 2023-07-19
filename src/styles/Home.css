@@ -393,7 +393,7 @@
 }
 
 .card img {
-    width: 400px;
+    width: 100%;
     height: 284px;
     flex-shrink: 0;
     border-top-left-radius: 30px;

@@ -31,13 +31,13 @@ export default function Header() {
           <span>
             {" "}
             <Link to="/register">Register</Link>
-            <Popup modal trigger={<button className="loginbtn">Login</button>}>
-              {(close) => <Login close={close} />}
-            </Popup>
+            <Link to="/login">
+              <button className="loginbtn">Login</button>
+            </Link>
           </span>
         ) : (
           <Link to="/profile">
-            <Person style={{ width: "50px", height: "40px" }}></Person>
+            <Person style={{ width: "50px", height: "30px" }}></Person>
           </Link>
         )}
       </div>

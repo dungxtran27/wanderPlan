@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Image, Row } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const AccomodationDetail = () => {
   const { cId } = useParams();
@@ -29,6 +29,23 @@ const AccomodationDetail = () => {
         setTypeAc(data);
       });
   }, []);
+  const nav = useNavigate();
+  const handleDelete = (id) => {
+    if (window.confirm("delete???")) {
+      fetch("http://localhost:9999/Accomodation/" + id, {
+        method: "DELETE",
+      })
+        .then(() => {
+          alert("delete success");
+          nav("/Accomodation");
+          // window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+  };
+  const currId = sessionStorage.getItem("currId");
   return (
     <Container>
       <Row>
@@ -36,7 +53,30 @@ const AccomodationDetail = () => {
           <Image thumbnail src={a.img} />
         </div>
         <div className="col-md-6">
-          <h1>Name: {a.name}</h1>
+          <h1>
+            Name: {a.name}
+            {currId == 1 ? (
+              <span>
+                {" "}
+                <button className="btn btn-success">
+                  <Link
+                    className="text-white"
+                    to={"/Accomodation/edit/" + a.id}
+                  >
+                    edit
+                  </Link>
+                </button>
+                <button
+                  onClick={() => handleDelete(a.id)}
+                  className="btn btn-danger"
+                >
+                  delete
+                </button>
+              </span>
+            ) : (
+              ""
+            )}
+          </h1>
 
           <h4>
             Type:

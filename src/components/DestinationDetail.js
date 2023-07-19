@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Image, Row } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const DestinationDetail = () => {
   const { dId } = useParams();
@@ -28,6 +28,23 @@ const DestinationDetail = () => {
         setAcomo(data);
       });
   }, []);
+  const nav = useNavigate();
+  const handleDelete = (id) => {
+    if (window.confirm("delete???")) {
+      fetch("http://localhost:9999/Destination/" + id, {
+        method: "DELETE",
+      })
+        .then(() => {
+          alert("delete success");
+          nav("/Destination");
+          //   window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+  };
+  const currid = sessionStorage.getItem("currId");
   return (
     <Container>
       <Row>
@@ -36,7 +53,23 @@ const DestinationDetail = () => {
         </div>
         <div className="col-md-6">
           <h1>{d.name}</h1>
-
+          {currid == 1 ? (
+            <span>
+              <button className="btn btn-success">
+                <Link className="text-white" to={"/Destination/edit/" + dId}>
+                  edit
+                </Link>
+              </button>
+              <button
+                onClick={() => handleDelete(d.id)}
+                className="btn btn-danger"
+              >
+                delete
+              </button>
+            </span>
+          ) : (
+            ""
+          )}
           <p>{d.description}</p>
         </div>
       </Row>

@@ -64,13 +64,13 @@ export default ({ close }) => {
       console.log(sessionStorage.getItem("currPhone"));
       console.log(sessionStorage.getItem("currAddress"));
       console.log(sessionStorage.getItem("currDob"));
-      close();
+      nav("/");
+      window.location.reload();
       // Perform any additional actions, such as updating state or redirecting
     } else {
       // Authentication failed
       // toast.error("Login failed");
       alert("Login failed");
-      close();
 
       // Handle the error accordingly, e.g., display an error message
     }
@@ -81,9 +81,9 @@ export default ({ close }) => {
     setError1("");
   };
   //console.log(sessionStorage.getItem("userName"));
-
+  const nav = useNavigate();
   return (
-    <div>
+    <div style={{ margin: "100px auto" }}>
       <div className="d-flex justify-content-center">
         <div className="card" style={{ width: "800px" }}>
           <div className="card-header text-left">
@@ -91,7 +91,7 @@ export default ({ close }) => {
           </div>
           {error && <div className="alert alert-danger">{error}</div>}
 
-          <div className="card-body">
+          <div className="card-body" style={{ height: "30px" }}>
             <form onSubmit={handleSubmit}>
               <div className="form-group text-left">
                 <label htmlFor="username">
@@ -125,7 +125,6 @@ export default ({ close }) => {
               </div>
 
               <button type="submit" className="btn btn-success ">
-                {" "}
                 Login
               </button>
             </form>

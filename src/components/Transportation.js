@@ -82,11 +82,11 @@ const Transportation = () => {
         </button>
       </Row>
       <Row>
-        <Table striped>
+        <Table striped hover>
           <thead className="thead-dark">
-            <td>name</td>
-            <td>type</td>
-            <td>price</td>
+            <th>name</th>
+            <th>type</th>
+            <th>price</th>
           </thead>
 
           <tbody>

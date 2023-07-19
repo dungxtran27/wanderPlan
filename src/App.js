@@ -14,6 +14,13 @@ import Footer from "./components/Footer";
 import TransportDetail from "./components/TransportDetail";
 import Profile from "./components/Profile";
 import Changepass from "./components/Changepass";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import User from "./components/User";
+import TransportEdit from "./components/TransportEdit";
+import AccomoEdit from "./components/AccomoEdit";
+import DestinEdit from "./components/DestinEdit";
+import UserEdit from "./components/UserEdit";
 //toast.configure();
 
 function App() {
@@ -38,8 +45,15 @@ function App() {
           path="/Transportation/detail/:tId"
           element={<TransportDetail />}
         />
+        <Route path="/Transportation/edit/:tId" element={<TransportEdit />} />
+        <Route path="/Accomodation/edit/:cId" element={<AccomoEdit />} />
+        <Route path="/Destination/edit/:dId" element={<DestinEdit />} />
+        <Route path="/User/edit/:uId" element={<UserEdit />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/changepass" element={<Changepass />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/User" element={<User />} />
       </Routes>
       {/* Footer Template */}
       <Footer />

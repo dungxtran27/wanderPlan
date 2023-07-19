@@ -1,26 +1,26 @@
 {
   "User": [
     {
+      "id": 1,
       "name": "admin",
-      "pass": "1234567",
+      "pass": "123456",
       "role": 1,
       "avatar": "https://robohash.org/doloribusvoluptaseum.jpg?size=50x50&set=set1",
       "email": "slhommee0@nationalgeographic.com",
-      "phone": "199-212-6351",
+      "phone": "999999999999",
       "address": "30063 Myrtle Junction",
-      "dob": "5/26/2023",
-      "id": 1
+      "dob": "5/26/2023"
     },
     {
+      "id": 2,
       "name": "dung",
-      "pass": "1234567",
+      "pass": "123456",
       "role": 2,
       "avatar": "https://robohash.org/veniamenimexplicabo.jpg?size=50x50&set=set1",
       "email": "cellwood1@patch.com",
       "phone": "380-420-4520",
       "address": "62 Kingsford Trail",
-      "dob": "4/20/2023",
-      "id": 2
+      "dob": "4/20/2023"
     },
     {
       "id": 3,
@@ -34,17 +34,6 @@
       "dob": "11/2/2022"
     },
     {
-      "id": 4,
-      "name": "ha",
-      "pass": "123456",
-      "role": 2,
-      "avatar": "https://robohash.org/harumvoluptatemut.jpg?size=50x50&set=set1",
-      "email": "jpetford3@scribd.com",
-      "phone": "773-499-6188",
-      "address": "55378 Spaight Plaza",
-      "dob": "3/25/2023"
-    },
-    {
       "id": 5,
       "name": "duyvu",
       "pass": "123456",
@@ -54,6 +43,16 @@
       "phone": "739-230-6083",
       "address": "43 Kennedy Crossing",
       "dob": "4/22/2023"
+    },
+    {
+      "name": "Ha",
+      "pass": "123",
+      "avatar": "a",
+      "email": "ha@gmail.com",
+      "phone": "123",
+      "address": "30 OK",
+      "dob": "2023-07-20",
+      "id": 6
     }
   ],
   "PostReview": [
@@ -178,219 +177,248 @@
       "comments": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
     }
   ],
-  
-    "Post": [
-        {
-            "id": 1,
-            "postImg": "https://bloganchoi.com/wp-content/uploads/2020/05/du-lich-da-nang.jpg",
-            "price": 1587,
-            "content": "The red and orange sand of the desert are very beautiful, let's take a trip here",
-            "provId": 2,
-            "name": "Cappadocia"
-        },
-        {
-            "id": 2,
-            "postImg": "https://images.careerbuilder.vn/content/images/quan-ly-du-lich-careerbuilder1.jpg",
-            "price": 1050,
-            "content": "famous for its hot air balloons and we can see its natural beauty from above",
-            "provId": 4,
-            "name": "Sossusvlei"
-        },
-        {
-            "id": 3,
-            "postImg": "https://images2.thanhnien.vn/Uploaded/ngocthanh/2022_10_09/check-in-9148.jpg",
-            "price": 1033,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 1,
-            "name": "Ha Noi"
-        },
-        {
-            "id": 4,
-            "postImg": "https://static.vinwonders.com/2022/11/khu-du-lich-viet-nam-1.jpg",
-            "price": 732,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 3,
-            "name": "Da Nang"
-        },
-        {
-            "id": 5,
-            "postImg": "https://baodongnai.com.vn/dataimages/202003/original/images2271335_vinhhalong.jpg",
-            "price": 730,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 1,
-            "name": "Hoi An"
-        },
-        {
-            "id": 6,
-            "postImg": "https://media.tapchitaichinh.vn/w1480/images/upload/hoangthuviet/08262022/tr16_qnqs.jpg",
-            "price": 1478,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 1,
-            "name": "New York"
-        },
-        {
-            "id": 7,
-            "postImg": "https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%208/Ng%C3%A0y_29/Thah/1545276593_305_bali-guide_jpg.jpg",
-            "price": 1924,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 3,
-            "name": "Tokyo"
-        },
-        {
-            "id": 8,
-            "postImg": "https://cdnmedia.baotintuc.vn/Upload/XjfgEPYM30O8z6jY3MHxSw/files/2019/10/310/Anh%201_Cau%20Vang%20-%20Sun%20World%20Ba%20Na%20Hills.jpg",
-            "price": 1406,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 3,
-            "name": "Paris"
-        },
-        {
-            "id": 9,
-            "postImg": "https://www.vietnambooking.com/wp-content/uploads/2021/05/thang-6-7-nen-di-dau-4.jpg",
-            "price": 1058,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 4,
-            "name": "Albuquerque"
-        },
-        {
-            "id": 10,
-            "postImg": "https://res.klook.com/image/upload/q_85/c_fill,w_750/v1681121150/blog/mxgtdb1buw2hxvgpwh8i.jpg",
-            "price": 1010,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 2,
-            "name": "Son Doong"
-        },
-        {
-            "id": 11,
-            "postImg": "https://congluan-cdn.congluan.vn/files/ngochai/2020/06/01/halong-dep-0818.jpg",
-            "price": 967,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 1,
-            "name": "Sydney"
-        },
-        {
-            "id": 12,
-            "postImg": "https://storage-vnportal.vnpt.vn/nbh-ubnd/2453/2023/Anhbai/xay-dung-ninh-binh-tro-thanh-trung-tam-du-lich-cua-ca-nuoc-fc4e5.jpg",
-            "price": 1505,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 2,
-            "name": "Ninh Binh"
-        },
-        {
-            "id": 13,
-            "postImg": "https://accgroup.vn/wp-content/uploads/2022/09/Du-lich-xanh-la-gi-Co-hoi-phat-trien-du-lich-Viet-Nam.jpg",
-            "price": 1793,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 1,
-            "name": "Hue"
-        },
-        {
-            "id": 14,
-            "postImg": "https://bcp.cdnchinhphu.vn/334894974524682240/2022/8/24/giai-nhat-thuyen-hoa-1661307085778425095586.jpg",
-            "price": 1905,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 4,
-            "name": "Moscow"
-        },
-        {
-            "id": 15,
-            "postImg": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2022/12/avt-5.jpg",
-            "price": 1534,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 4,
-            "name": "London"
-        },
-        {
-            "id": 16,
-            "postImg": "https://cdn.tgdd.vn/Files/2021/06/22/1362476/tu-a-z-kinh-nghiem-du-lich-phu-quoc-danh-cho-gia-dinh-202106222314162367.jpg",
-            "price": 1559,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 5,
-            "name": "Phu Quoc"
-        },
-        {
-            "id": 17,
-            "postImg": "https://sakos.vn/wp-content/uploads/2022/12/WTTC-Gives-Seven-More-Countries-Safe-Travel-Stamp-2-2.jpg",
-            "price": 1973,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 2,
-            "name": "Kuala Lumpur"
-        },
-        {
-            "id": 18,
-            "postImg": "https://dacotours.com/wp-content/uploads/2019/10/dia-diem-du-lich-viet-nam.jpg",
-            "price": 959,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 3,
-            "name": "Korea"
-        },
-        {
-            "id": 19,
-            "postImg": "https://cdnimg.vietnamplus.vn/t620/uploaded/ngtnnn/2021_02_09/0902dulich.jpg",
-            "price": 1593,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 1,
-            "name": "Malaysia"
-        },
-        {
-            "id": 20,
-            "postImg": "https://nld.mediacdn.vn/291774122806476800/2021/10/28/3-anh-chot-32910-16353728564007125658.jpg",
-            "price": 1229,
-            "content": "a cool trip because the various scenery around will be very eye-catching",
-            "provId": 4,
-            "name": "Thailand"
-        }
-    ],
+  "Post": [
+    {
+      "id": 1,
+      "postImg": "https://bloganchoi.com/wp-content/uploads/2020/05/du-lich-da-nang.jpg",
+      "price": 1587,
+      "content": "The red and orange sand of the desert are very beautiful, let's take a trip here",
+      "provId": 2,
+      "name": "Cappadocia"
+    },
+    {
+      "id": 2,
+      "postImg": "https://images.careerbuilder.vn/content/images/quan-ly-du-lich-careerbuilder1.jpg",
+      "price": 1050,
+      "content": "famous for its hot air balloons and we can see its natural beauty from above",
+      "provId": 4,
+      "name": "Sossusvlei"
+    },
+    {
+      "id": 3,
+      "postImg": "https://images2.thanhnien.vn/Uploaded/ngocthanh/2022_10_09/check-in-9148.jpg",
+      "price": 1033,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 1,
+      "name": "Ha Noi"
+    },
+    {
+      "id": 4,
+      "postImg": "https://static.vinwonders.com/2022/11/khu-du-lich-viet-nam-1.jpg",
+      "price": 732,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 3,
+      "name": "Da Nang"
+    },
+    {
+      "id": 5,
+      "postImg": "https://baodongnai.com.vn/dataimages/202003/original/images2271335_vinhhalong.jpg",
+      "price": 730,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 1,
+      "name": "Hoi An"
+    },
+    {
+      "id": 6,
+      "postImg": "https://media.tapchitaichinh.vn/w1480/images/upload/hoangthuviet/08262022/tr16_qnqs.jpg",
+      "price": 1478,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 1,
+      "name": "New York"
+    },
+    {
+      "id": 7,
+      "postImg": "https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%208/Ng%C3%A0y_29/Thah/1545276593_305_bali-guide_jpg.jpg",
+      "price": 1924,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 3,
+      "name": "Tokyo"
+    },
+    {
+      "id": 8,
+      "postImg": "https://cdnmedia.baotintuc.vn/Upload/XjfgEPYM30O8z6jY3MHxSw/files/2019/10/310/Anh%201_Cau%20Vang%20-%20Sun%20World%20Ba%20Na%20Hills.jpg",
+      "price": 1406,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 3,
+      "name": "Paris"
+    },
+    {
+      "id": 9,
+      "postImg": "https://www.vietnambooking.com/wp-content/uploads/2021/05/thang-6-7-nen-di-dau-4.jpg",
+      "price": 1058,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 4,
+      "name": "Albuquerque"
+    },
+    {
+      "id": 10,
+      "postImg": "https://res.klook.com/image/upload/q_85/c_fill,w_750/v1681121150/blog/mxgtdb1buw2hxvgpwh8i.jpg",
+      "price": 1010,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 2,
+      "name": "Son Doong"
+    },
+    {
+      "id": 11,
+      "postImg": "https://congluan-cdn.congluan.vn/files/ngochai/2020/06/01/halong-dep-0818.jpg",
+      "price": 967,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 1,
+      "name": "Sydney"
+    },
+    {
+      "id": 12,
+      "postImg": "https://storage-vnportal.vnpt.vn/nbh-ubnd/2453/2023/Anhbai/xay-dung-ninh-binh-tro-thanh-trung-tam-du-lich-cua-ca-nuoc-fc4e5.jpg",
+      "price": 1505,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 2,
+      "name": "Ninh Binh"
+    },
+    {
+      "id": 13,
+      "postImg": "https://accgroup.vn/wp-content/uploads/2022/09/Du-lich-xanh-la-gi-Co-hoi-phat-trien-du-lich-Viet-Nam.jpg",
+      "price": 1793,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 1,
+      "name": "Hue"
+    },
+    {
+      "id": 14,
+      "postImg": "https://bcp.cdnchinhphu.vn/334894974524682240/2022/8/24/giai-nhat-thuyen-hoa-1661307085778425095586.jpg",
+      "price": 1905,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 4,
+      "name": "Moscow"
+    },
+    {
+      "id": 15,
+      "postImg": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2022/12/avt-5.jpg",
+      "price": 1534,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 4,
+      "name": "London"
+    },
+    {
+      "id": 16,
+      "postImg": "https://cdn.tgdd.vn/Files/2021/06/22/1362476/tu-a-z-kinh-nghiem-du-lich-phu-quoc-danh-cho-gia-dinh-202106222314162367.jpg",
+      "price": 1559,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 5,
+      "name": "Phu Quoc"
+    },
+    {
+      "id": 17,
+      "postImg": "https://sakos.vn/wp-content/uploads/2022/12/WTTC-Gives-Seven-More-Countries-Safe-Travel-Stamp-2-2.jpg",
+      "price": 1973,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 2,
+      "name": "Kuala Lumpur"
+    },
+    {
+      "id": 18,
+      "postImg": "https://dacotours.com/wp-content/uploads/2019/10/dia-diem-du-lich-viet-nam.jpg",
+      "price": 959,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 3,
+      "name": "Korea"
+    },
+    {
+      "id": 19,
+      "postImg": "https://cdnimg.vietnamplus.vn/t620/uploaded/ngtnnn/2021_02_09/0902dulich.jpg",
+      "price": 1593,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 1,
+      "name": "Malaysia"
+    },
+    {
+      "id": 20,
+      "postImg": "https://nld.mediacdn.vn/291774122806476800/2021/10/28/3-anh-chot-32910-16353728564007125658.jpg",
+      "price": 1229,
+      "content": "a cool trip because the various scenery around will be very eye-catching",
+      "provId": 4,
+      "name": "Thailand"
+    }
+  ],
   "Reservation": [
     {
       "id": 1,
       "uId": 5,
-      "dId": 7
+      "dId": 7,
+      "cId": 6,
+      "tId": 4,
+      "date": "4/12/2023"
     },
     {
       "id": 2,
       "uId": 4,
-      "dId": 2
+      "dId": 2,
+      "cId": 3,
+      "tId": 3,
+      "date": "7/13/2023"
     },
     {
       "id": 3,
       "uId": 3,
-      "dId": 2
+      "dId": 2,
+      "cId": 1,
+      "tId": 1,
+      "date": "8/23/2023"
     },
     {
       "id": 4,
       "uId": 1,
-      "dId": 8
+      "dId": 8,
+      "cId": 1,
+      "tId": 1,
+      "date": "8/04/2023"
     },
     {
       "id": 5,
       "uId": 4,
-      "dId": 8
+      "dId": 8,
+      "cId": 1,
+      "tId": 3,
+      "date": "9/05/2023"
     },
     {
       "id": 6,
       "uId": 4,
-      "dId": 5
+      "dId": 5,
+      "cId": 6,
+      "tId": 15,
+      "date": "10/10/2023"
     },
     {
       "id": 7,
       "uId": 1,
-      "dId": 1
+      "dId": 1,
+      "cId": 5,
+      "tId": 11,
+      "date": "5/29/2023"
     },
     {
       "id": 8,
       "uId": 2,
-      "dId": 3
+      "dId": 3,
+      "cId": 5,
+      "tId": 13,
+      "date": "6/31/2023"
     },
     {
       "id": 9,
       "uId": 3,
-      "dId": 8
+      "dId": 8,
+      "cId": 5,
+      "tId": 2,
+      "date": "5/16/2023"
     },
     {
       "id": 10,
       "uId": 1,
-      "dId": 4
+      "dId": 4,
+      "cId": 3,
+      "tId": 4,
+      "date": "4/22/2023"
     }
   ],
   "accomoType": [
@@ -429,35 +457,19 @@
       "dId": 1
     },
     {
-      "id": 2,
-      "name": "Edik",
-      "img": "https://res.cloudinary.com/simpleview/image/upload/v1654733490/clients/orlandofl/5900_pool_b92df465-0c67-4161-b8bb-67f9fc301094.jpg",
-      "type": 1,
-      "price": 940,
-      "dId": 2
-    },
-    {
       "id": 3,
-      "name": "Jermayne",
+      "name": "mushshshsh",
       "img": "https://upload.wikimedia.org/wikipedia/commons/9/97/Lamborghini_Aventador_LP700-4_Orange.jpg",
-      "type": 3,
-      "price": 688,
+      "type": 1,
+      "price": "9999",
       "dId": 3
     },
     {
-      "id": 20,
-      "name": "Nessa",
-      "img": "https://www.theknot.com/tk-media/images/9a506749-95e9-47cf-857e-5374f2205b93~rs_768.h",
-      "type": 2,
-      "price": 741,
-      "dId": 1
-    },
-    {
       "id": 4,
-      "name": "Iolanthe",
+      "name": "test2",
       "img": "https://res.cloudinary.com/simpleview/image/upload/v1654733490/clients/orlandofl/5900_pool_b92df465-0c67-4161-b8bb-67f9fc301094.jpg",
-      "type": 1,
-      "price": 362,
+      "type": 3,
+      "price": "1111",
       "dId": 4
     },
     {
@@ -515,14 +527,6 @@
       "type": 1,
       "price": 754,
       "dId": 6
-    },
-    {
-      "id": 20,
-      "name": "Nessa",
-      "img": "https://www.theknot.com/tk-media/images/9a506749-95e9-47cf-857e-5374f2205b93~rs_768.h",
-      "type": 2,
-      "price": 741,
-      "dId": 1
     },
     {
       "id": 12,
@@ -693,12 +697,6 @@
       "description": "Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue."
     },
     {
-      "id": 2,
-      "name": "Portugal",
-      "img": "https://bloganchoi.com/wp-content/uploads/2020/05/du-lich-da-nang.jpg",
-      "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh."
-    },
-    {
       "id": 3,
       "name": "Ukraine",
       "img": "https://bloganchoi.com/wp-content/uploads/2020/05/du-lich-da-nang.jpg",
@@ -719,8 +717,8 @@
     {
       "id": 6,
       "name": "Poland",
-      "img": "https://bloganchoi.com/wp-content/uploads/2020/05/du-lich-da-nang.jpg",
-      "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo."
+      "img": "https://cdn.ceoworld.biz/wp-content/uploads/2020/06/Paris.jpg",
+      "description": "dung muahahahahahah "
     },
     {
       "id": 7,
@@ -739,12 +737,6 @@
       "name": "United States",
       "img": "https://bloganchoi.com/wp-content/uploads/2020/05/du-lich-da-nang.jpg",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo."
-    },
-    {
-      "id": 10,
-      "name": "China",
-      "img": "https://cdnimg.vietnamplus.vn/t620/uploaded/ngtnnn/2021_02_09/0902dulich.jpg",
-      "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat."
     }
   ],
   "Provider": [
@@ -818,10 +810,10 @@
   "Transportation": [
     {
       "id": 1,
-      "name": "Sentra",
+      "name": "muahahah",
       "img": "https://upload.wikimedia.org/wikipedia/commons/9/97/Lamborghini_Aventador_LP700-4_Orange.jpg",
       "type": 1,
-      "price": 1859,
+      "price": "9999",
       "dId": 3
     },
     {
@@ -935,14 +927,6 @@
       "type": 4,
       "price": 740,
       "dId": 7
-    },
-    {
-      "id": 16,
-      "name": "Impala",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/9/97/Lamborghini_Aventador_LP700-4_Orange.jpg",
-      "type": 2,
-      "price": 507,
-      "dId": 4
     },
     {
       "id": 17,

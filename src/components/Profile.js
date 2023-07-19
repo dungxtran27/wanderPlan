@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { Container, Image, Col, Row } from "react-bootstrap";
+import { Container, Image, Col, Row, Table } from "react-bootstrap";
 import Login from "./Login";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 const Profile = () => {
   const currId = sessionStorage.getItem("currId");
-  const currName = sessionStorage.getItem("currName");
-  const currAvt = sessionStorage.getItem("currAvt");
-  const currAddress = sessionStorage.getItem("currAddress");
-  const currEmail = sessionStorage.getItem("currEmail");
-  const currRole = sessionStorage.getItem("currRole");
-  const currPhone = sessionStorage.getItem("currPhone");
-  const currDob = sessionStorage.getItem("currDob");
 
+  const currRole = sessionStorage.getItem("currRole");
+
+  const [accommodation, setAccommodation] = useState([]);
+  const [destination, setDestin] = useState([]);
+  const [Transportation, setTransport] = useState([]);
+  const [reservation, setReservation] = useState([]);
   const [user, setUser] = useState([]);
   useEffect(() => {
     fetch(" http://localhost:9999/User/" + currId)
@@ -21,6 +20,34 @@ const Profile = () => {
         setUser(data);
       });
   }, [currId]);
+  useEffect(() => {
+    fetch("http://localhost:9999/Accomodation")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setAccommodation(data);
+      });
+  }, []);
+  useEffect(() => {
+    fetch(" http://localhost:9999/Transportation")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setTransport(data);
+      });
+  }, []);
+  useEffect(() => {
+    fetch(" http://localhost:9999/Reservation")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setReservation(data);
+      });
+  }, []);
+  useEffect(() => {
+    fetch(" http://localhost:9999/Destination")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setDestin(data);
+      });
+  }, []);
   const logout = () => {
     sessionStorage.removeItem("currId");
     sessionStorage.removeItem("currName");
@@ -31,6 +58,7 @@ const Profile = () => {
     sessionStorage.removeItem("currAddress");
     sessionStorage.removeItem("currDob");
     sessionStorage.removeItem("currPhone");
+    window.location.reload();
   };
   return (
     <Container>
@@ -64,19 +92,49 @@ const Profile = () => {
             )}
           </Col>
           <Col className="col-md-8">
-            <h2>Email: {user.email}</h2>
-            <h2>Address: {user.address}</h2>
-            <h2>Phone Number: {user.phone}</h2>
-            <h2>Date of birth: {user.dob}</h2>
-
+            <h3>Email: {user.email}</h3>
+            <h3>Address: {user.address}</h3>
+            <h3>Phone Number: {user.phone}</h3>
+            <h3>Date of birth: {user.dob}</h3>
+            <h3>My reservation: </h3>
+            <Table>
+              <thead>
+                <th>destination</th>
+                <th>accommodation</th>
+                <th>Transportation</th>
+                <th>date</th>
+              </thead>
+              <tbody>
+                {reservation.map((r) =>
+                  r.uId == currId ? (
+                    <tr>
+                      <td>
+                        {destination.map((d) => (r.dId == d.id ? d.name : ""))}
+                      </td>
+                      <td>
+                        {accommodation.map((a) =>
+                          r.cId == a.id ? a.name : ""
+                        )}
+                      </td>
+                      <td>
+                        {Transportation.map((t) =>
+                          r.tId == t.id ? t.name : ""
+                        )}
+                      </td>
+                      <td>{r.date}</td>
+                    </tr>
+                  ) : (
+                    ""
+                  )
+                )}
+              </tbody>
+            </Table>
             <button
               onClick={logout}
               style={{ marginRight: "20px" }}
               className="btn btn-danger"
             >
-              <Link className="text-white" to="/">
-                Logout
-              </Link>
+              Logout
             </button>
             <button className="btn btn-warning">
               <Link className="text-white" to="/changepass">
