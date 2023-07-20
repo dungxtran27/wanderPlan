@@ -14,7 +14,7 @@ const Book = () => {
   const [date, setDate] = useState("");
   const { dId } = useParams();
   //setDestin(dId);
-  const stats = true;
+  const stats = false;
   const currId = sessionStorage.getItem("currId");
   // const HandleSubmit = (e) => {};
   // useEffect(() => {
@@ -33,10 +33,10 @@ const Book = () => {
     (e) => {
       e.preventDefault();
       const rev = {
-        uId: currId,
-        dId,
-        cId: accomoType,
-        tId: transportType,
+        uId: parseInt(currId),
+        dId: parseInt(dId),
+        cId: parseInt(accomoType),
+        tId: parseInt(transportType),
         date,
         stats,
       };

@@ -74,6 +74,7 @@ const PostDetail = () => {
         })
           .then(() => {
             alert("sent successfully!");
+            setCmt("");
           })
           .catch((err) => {
             console.log(err.message);
@@ -119,48 +120,48 @@ const PostDetail = () => {
             )}
           </h4>
         </Col>
-        <h1 style={{ display: "block" }}>Comments:</h1>
-        <br />
-        {review.map((rv) =>
-          rv.postId == pId ? (
-            <p style={{ display: "block" }}>
-              {user.map((u) =>
-                u.id == rv.uId ? (
-                  <p>
-                    <i>{u.name}</i> said:
-                  </p>
-                ) : (
-                  ""
-                )
-              )}
-              {rv.comments}
-            </p>
-          ) : (
-            ""
-          )
-        )}
-        <form style={{ width: "100%" }} onSubmit={HandleSubmit}>
-          <div className="col-lg-6">
-            <div className="form-group">
-              <label style={{ fontWeight: "bold" }}>
-                leave your review: <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                placeholder="Input your comments here"
-                //required
-                //  value={review}
-                onChange={(e) => setCmt(e.target.value)}
-                className="form-control"
-              ></input>
-              <span>
-                <button type="submit" className="btn btn-primary">
-                  send
-                </button>
-              </span>
-            </div>
-          </div>
-        </form>
       </Row>
+      <h1 style={{ display: "block" }}>Comments:</h1>
+      <br />
+      {review.map((rv) =>
+        rv.postId == pId ? (
+          <p style={{ display: "block" }}>
+            {user.map((u) =>
+              u.id == rv.uId ? (
+                <p>
+                  <i>{u.name}</i> said:
+                </p>
+              ) : (
+                ""
+              )
+            )}
+            {rv.comments}
+          </p>
+        ) : (
+          ""
+        )
+      )}
+      <form style={{ width: "100%" }} onSubmit={HandleSubmit}>
+        <div className="col-lg-6">
+          <div className="form-group">
+            <label style={{ fontWeight: "bold" }}>
+              leave your review: <span style={{ color: "red" }}>*</span>
+            </label>
+            <input
+              placeholder="Input your comments here"
+              //required
+              //  value={review}
+              onChange={(e) => setCmt(e.target.value)}
+              className="form-control"
+            ></input>
+            <span>
+              <button type="submit" className="btn btn-primary">
+                send
+              </button>
+            </span>
+          </div>
+        </div>
+      </form>
     </Container>
   );
 };

@@ -23,6 +23,8 @@ import DestinEdit from "./components/DestinEdit";
 import UserEdit from "./components/UserEdit";
 import PostDetail from "./components/PostDetail";
 import Book from "./components/Booking";
+import About from "./screens/About";
+import BookManage from "./components/BookManage";
 //toast.configure();
 
 function App() {
@@ -33,8 +35,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Destination" element={<Destination />} />
+        <Route path="/about" element={<About />} />
         <Route path="/Accomodation" element={<Accomodation />} />
         <Route path="/Transportation" element={<Transportation />} />
+        <Route path="/bookmanage" element={<BookManage />} />
         <Route
           path="/Destination/detail/:dId"
           element={<DestinationDetail />}

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Container, Image, Col, Row, Table } from "react-bootstrap";
 import Login from "./Login";
 import Popup from "reactjs-popup";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 const Profile = () => {
   const currId = sessionStorage.getItem("currId");
-
+  const nav = useNavigate();
   const currRole = sessionStorage.getItem("currRole");
 
   const [accommodation, setAccommodation] = useState([]);
@@ -59,6 +60,7 @@ const Profile = () => {
     sessionStorage.removeItem("currDob");
     sessionStorage.removeItem("currPhone");
     window.location.reload();
+    nav("/");
   };
   return (
     <Container>
@@ -82,11 +84,25 @@ const Profile = () => {
             <h1>{user.name}</h1>
 
             {currRole == 1 ? (
-              <button className="btn btn-primary" onClick={logout}>
-                <Link className="text-white" to="/User">
-                  Management
-                </Link>
-              </button>
+              <div>
+                <div>
+                  <button
+                    style={{ width: "181px", marginBottom: "15px" }}
+                    className="btn btn-info"
+                  >
+                    <Link className="text-white" to="/User">
+                      User Management
+                    </Link>
+                  </button>
+                </div>
+                <div>
+                  <button className="btn btn-primary">
+                    <Link className="text-white" to="/bookmanage">
+                      booking management
+                    </Link>
+                  </button>
+                </div>
+              </div>
             ) : (
               ""
             )}
@@ -123,7 +139,7 @@ const Profile = () => {
                         )}
                       </td>
                       <td>{r.date}</td>
-                      <td>{r.status === true ? "waiting" : "done"}</td>
+                      <td>{r.status === true ? "done" : "waiting"}</td>
                     </tr>
                   ) : (
                     ""
