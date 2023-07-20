@@ -7,7 +7,7 @@ export default function Footer() {
             <div>
                 <img src="/img/Logo2.png" alt="Logo" style={{ height: '47px' }} />
                 <p className="footer-text">
-                    With WanderPlan you can experience new travel and the best <br />
+                    With WanderPlan you can experience new travel and the best
                     tourist destinations that we have to offer
                 </p>
                 <div id="footer-copyright">Copyright © WanderPlan 2023</div>

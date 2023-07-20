@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 #header {
     width: 100%;
     height: 115px;
@@ -10,7 +13,7 @@
 
 .logo-section {
     flex: 1;
-    margin-left: 80px;
+    margin-left: 126px;
 }
 
 .nav-links {
@@ -35,7 +38,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 80px;
+    margin-right: 126px;
     align-items: center;
 }
 
@@ -49,22 +52,6 @@
     color: white;
 }
 
-.loginbtn {
-    display: inline-block;
-    border-radius: 100px;
-    background: #FFF;
-    width: 121px;
-    height: 47px;
-    line-height: 47px;
-    /* To vertically center the text */
-    text-align: center;
-    /* To horizontally center the text */
-    font-weight: bold;
-    color: #000;
-    transition: background-color 0.3s ease;
-    /* Smooth background color transition */
-}
-
 .auth-links .login-button:hover {
     background-color: rgba(255, 255, 255, 0.6);
 }
@@ -74,7 +61,7 @@
     height: 280px;
     flex-shrink: 0;
     display: flex;
-    margin: 50px 79px 43px 80px;
+    margin: 50px 79px 43px 126px;
     justify-content: space-between;
     width: 84%;
 }
@@ -135,7 +122,7 @@
     background: #FFF;
     width: 121px;
     height: 40px;
-    line-height: 40px; /* To vertically center the text */
+    line-height: 10px; /* To vertically center the text */
     text-align: center; /* To horizontally center the text */
     font-weight: bold;
     color: #000;
@@ -144,6 +131,7 @@
   
    .loginbtn:hover {
     background-color: rgba(255, 255, 255, 0.6);
+    color:#FFF;
   }
   .cardtxt{
     

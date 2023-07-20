@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 .banner {
     width: 100%;
     height: 644.05px;
@@ -32,6 +35,18 @@
     line-height: 100px;
     letter-spacing: -3.2px;
     margin: 0px;
+}
+
+.banner-text-large-2 {
+    color: var(--text-light, #FFF);
+    font-family: Inter;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1px;
+    width: 543px;
+    margin-top: 38.45px;
 }
 
 .destination-button {
@@ -150,7 +165,7 @@
     display: flex;
     width: 551px;
     color: rgba(255, 255, 255, 0.70);
-    font-family: Calibri, sans-serif;
+    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -159,13 +174,28 @@
     margin-top: 15px;
 }
 
+.content-2 {
+    color: var(--text-light-gray, rgba(255, 255, 255, 0.64));
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    /* 200% */
+    width: 470px;
+    height: 66px;
+    flex-shrink: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .banner-image img {
     max-width: 100%;
     /* Ensures the image doesn't overflow its container */
     height: auto;
     /* Maintains the aspect ratio of the image */
     padding-right: 65px;
-    margin-left: 306px;
+    margin-left: 220px;
 }
 
 .home-content1 {
@@ -213,7 +243,7 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-right: 250px;
+    margin-right: 150px;
 }
 
 .left-side h1 {
@@ -327,6 +357,148 @@
     font-style: normal;
     font-weight: 400;
     line-height: 180%;
+    margin-right: 161px;
+
     /* 36px */
     opacity: 0.6000000238418579;
+}
+
+.circle-button {
+    width: 67px;
+    height: 67.359px;
+    background: #F5F5F5;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-in-out;
+}
+
+.circle-button:active {
+    transform: scale(0.7);
+}
+
+.circle-button-white {
+    width: 53.284px;
+    height: 53px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+}
+
+.circle-button-black {
+    width: 53.284px;
+    height: 53px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.circle-button button img {
+    width: 34.182px;
+    height: 34px;
+    flex-shrink: 0;
+}
+
+.circle-button button:hover {
+    background: hwb(44 10% 13%);
+    cursor: pointer;
+}
+
+.post-container {
+    display: flex;
+    gap: 40px;
+}
+
+.card {
+    width: 400px;
+    height: 524.799px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    flex: 0 0 400px;
+    border-radius: 30px;
+    transition: transform 0.3s ease-out;
+    opacity: 50%;
+}
+
+.card img {
+    width: 400px;
+    height: 284px;
+    flex-shrink: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.card-content h2 {
+    padding: 20px 20px 0 20px;
+    color: #0C111F;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.card-content p {
+    padding: 0px 20px 0 20px;
+    color: rgba(12, 17, 31, 0.60);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.card-footer p {
+    color: rgba(12, 17, 31, 0.60);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 155%;
+    letter-spacing: -0.18px;
+}
+
+.card-footer span {
+    color: #0C111F;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.card-footer button {
+    display: inline-flex;
+    padding: 9px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    background: linear-gradient(135deg, #8482FF 0%, #7723FE 100%);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.card-middle {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+    z-index: 1;
+    box-shadow: 0px 20px 30px 10px rgba(0, 0, 0, 0.20);
+    opacity: 100%;
+}
+
+.card-middle .card-footer {
+    margin-top: 50px;
 }
