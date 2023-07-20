@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useEffect, useState } from "react";
 import {
   Col,
@@ -7,14 +8,18 @@ import {
   Row,
   Tooltip,
 } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+
+import { Link, useParams } from "react-router-dom";
 
 const PostDetail = () => {
   const { pId } = useParams();
   const [p, setPost] = useState([]);
   const [prov, setProv] = useState([]);
   const [Destination, setDestin] = useState([]);
-
+  const [review, setReview] = useState([]);
+  const [cmt, setCmt] = useState("");
+  const [user, setUser] = useState([]);
+  const currId = sessionStorage.getItem("currId");
   useEffect(() => {
     fetch(" http://localhost:9999/Post/" + pId)
       .then((resp) => resp.json())
@@ -22,7 +27,13 @@ const PostDetail = () => {
         setPost(data);
       });
   }, [pId]);
-
+  useEffect(() => {
+    fetch(" http://localhost:9999/postReview/")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setReview(data);
+      });
+  }, [review]);
   useEffect(() => {
     fetch(" http://localhost:9999/Destination")
       .then((resp) => resp.json())
@@ -37,7 +48,40 @@ const PostDetail = () => {
         setProv(data);
       });
   }, []);
+  useEffect(() => {
+    fetch(" http://localhost:9999/User")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setUser(data);
+      });
+  }, []);
 
+  const HandleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      const rev = {
+        uId: currId,
+        postId: pId,
+        comments: cmt,
+      };
+      if (cmt.length == 0) {
+        alert("comment must not empty");
+      } else {
+        fetch("http://localhost:9999/postReview", {
+          method: "POST",
+          headers: { "Content-Type": "Application/Json", Charset: "UTF-8" },
+          body: JSON.stringify(rev),
+        })
+          .then(() => {
+            alert("sent successfully!");
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      }
+    },
+    [review]
+  );
   return (
     <Container>
       <h1>{p.name}</h1>
@@ -75,6 +119,47 @@ const PostDetail = () => {
             )}
           </h4>
         </Col>
+        <h1 style={{ display: "block" }}>Comments:</h1>
+        <br />
+        {review.map((rv) =>
+          rv.postId == pId ? (
+            <p style={{ display: "block" }}>
+              {user.map((u) =>
+                u.id == rv.uId ? (
+                  <p>
+                    <i>{u.name}</i> said:
+                  </p>
+                ) : (
+                  ""
+                )
+              )}
+              {rv.comments}
+            </p>
+          ) : (
+            ""
+          )
+        )}
+        <form style={{ width: "100%" }} onSubmit={HandleSubmit}>
+          <div className="col-lg-6">
+            <div className="form-group">
+              <label style={{ fontWeight: "bold" }}>
+                leave your review: <span style={{ color: "red" }}>*</span>
+              </label>
+              <input
+                placeholder="Input your comments here"
+                //required
+                //  value={review}
+                onChange={(e) => setCmt(e.target.value)}
+                className="form-control"
+              ></input>
+              <span>
+                <button type="submit" className="btn btn-primary">
+                  send
+                </button>
+              </span>
+            </div>
+          </div>
+        </form>
       </Row>
     </Container>
   );

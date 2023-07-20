@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [current, setCurrent] = useState(0);
-
+  const currId = sessionStorage.getItem("currId");
   useEffect(() => {
     fetch("http://localhost:9999/Post")
       .then((resp) => resp.json())
@@ -147,9 +147,15 @@ export default function Home() {
                   <p>
                     Price: <span>{post.price}</span>
                   </p>
-                  <Link to={"/booking/" + post.dId}>
-                    <button>Book Ticket</button>
-                  </Link>
+                  {currId === null ? (
+                    <Link to={"/login"}>
+                      <button>Book Ticket</button>
+                    </Link>
+                  ) : (
+                    <Link to={"/booking/" + post.dId}>
+                      <button>Book Ticket</button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

@@ -1,38 +1,90 @@
+import { useCallback, useEffect, useRef } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Book = () => {
   const [userId, setUserId] = useState("");
-  const [Destination, setDestin] = useState("");
-  const [accomo, setAccomo] = useState("");
-  const [transport, seTransport] = useState("");
+  const [accomoType, setAccoType] = useState("1");
+
+  const [accomoTypes, setAccoTypes] = useState([]);
+
+  const [transportType, setTransportType] = useState("1");
+  const [transportTypes, setTransportTypes] = useState([]);
   const [date, setDate] = useState("");
   const { dId } = useParams();
-  setDestin(dId);
+  //setDestin(dId);
   const stats = true;
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    const rev = { Destination, accomo, transport, date, stats };
-    // console.log(product);
-    if (accomo.length === 0 || transport.length === 0 || date === 0) {
-      alert("Please fill all fields");
-    } else {
-      fetch("http://localhost:9999/Reservation", {
-        method: "POST",
-        headers: { "Content-Type": "Application/Json", Charset: "UTF-8" },
-        body: JSON.stringify(rev),
-      })
-        .then(() => {
-          alert("book successfully!");
-          Navigate("/");
+  const currId = sessionStorage.getItem("currId");
+  // const HandleSubmit = (e) => {};
+  // useEffect(() => {
+  //   setDestin(dId);
+  // }, [dId]);
+  const Destination = dId;
+  useEffect(() => {
+    fetch(" http://localhost:9999/type")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setTransportTypes(data);
+      });
+  }, [transportType]);
+
+  const HandleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      const rev = {
+        uId: currId,
+        dId,
+        cId: accomoType,
+        tId: transportType,
+        date,
+        stats,
+      };
+      if (accomoType.length == 0 || transportType.length == 0 || date == 0) {
+        alert("Please fill all fields");
+      } else {
+        fetch("http://localhost:9999/Reservation", {
+          method: "POST",
+          headers: { "Content-Type": "Application/Json", Charset: "UTF-8" },
+          body: JSON.stringify(rev),
         })
-        .catch((err) => {
-          console.log(err.message);
-        });
-    }
+          .then(() => {
+            alert("book successfully!");
+            Navigate("/");
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      }
+    },
+    [accomoType, transportType, date]
+  );
+  useEffect(() => {
+    fetch(" http://localhost:9999/accomoType")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setAccoTypes(data);
+      });
+  }, [accomoType]);
+  // const handleAcco = (e) => {
+  //   setAccoType(e.target.value, () => {
+  //     setAccoType(e.target.value);
+  //   });
+  //   console.log(accomoType);
+  // };
+  const handleAcco = (e) => {
+    setAccoType(e.target.value);
+    console.log(accomoType);
   };
 
+  const handleTransport = (e) => {
+    setTransportType(e.target.value);
+    console.log(transportType);
+  };
+  const handleDate = (e) => {
+    setDate(e.target.value);
+    console.log(date);
+  };
   const Navigate = useNavigate();
   return (
     <Container>
@@ -46,34 +98,13 @@ const Book = () => {
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label style={{ fontWeight: "bold" }}>
-                        Phone Number <span style={{ color: "red" }}>*</span>
-                      </label>
-                      <input
-                        placeholder="123-456-789"
-                        value={phone}
-                        required
-                        onChange={(e) => phoneChange(e.target.value)}
-                        className="form-control"
-                      ></input>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label style={{ fontWeight: "bold" }}>
                         Accommodation: <span style={{ color: "red" }}>*</span>
                       </label>
-                      <select onChange={(e) => setAccomo(e.target.value)}>
-                        <option>muahaha muahaha</option>
-                        <option>muahaha muahaha</option>
-                        <option>muahaha muahaha</option>
+                      <select onChange={handleAcco}>
+                        {accomoTypes.map((a) => (
+                          <option value={a.id}>{a.name}</option>
+                        ))}
                       </select>
-                      {/* <input
-                        placeholder="123-456-789"
-                        value={phone}
-                        required
-                        onChange={(e) => phoneChange(e.target.value)}
-                        className="form-control"
-                      ></input> */}
                     </div>
                   </div>
 
@@ -82,18 +113,11 @@ const Book = () => {
                       <label style={{ fontWeight: "bold" }}>
                         transport: <span style={{ color: "red" }}>*</span>
                       </label>
-                      <select onChange={(e) => seTransport(e.target.value)}>
-                        <option>muahaha muahaha</option>
-                        <option>muahaha muahaha</option>
-                        <option>muahaha muahaha</option>
+                      <select onChange={handleTransport}>
+                        {transportTypes.map((t) => (
+                          <option value={t.id}>{t.name}</option>
+                        ))}
                       </select>
-                      {/* <input
-                        placeholder="132, My Street, Kingston, New York 12401"
-                        required
-                        value={address}
-                        onChange={(e) => addressChange(e.target.value)}
-                        className="form-control"
-                      ></input> */}
                     </div>
                   </div>
 
@@ -103,7 +127,7 @@ const Book = () => {
                       <input
                         type="date"
                         value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        onChange={handleDate}
                         className="form-control"
                       ></input>
                     </div>
