@@ -10,6 +10,7 @@ import DestinationDetail from "./components/DestinationDetail";
 import AccomodationDetail from "./components/AccomodationDetail";
 import Accomodation from "./components/Accomodation";
 import Transportation from "./components/Transportation";
+import Register from "./components/Register";
 import Footer from './components/Footer';
 
 function App() {
@@ -22,14 +23,9 @@ function App() {
         <Route path="/Destination" element={<Destination />} />
         <Route path="/Accomodation" element={<Accomodation />} />
         <Route path="/Transportation" element={<Transportation />} />
-        <Route
-          path="/Destination/detail/:dId"
-          element={<DestinationDetail />}
-        />
-        <Route
-          path="/Accomodation/detail/:cId"
-          element={<AccomodationDetail />}
-        />
+        <Route path="/Destination/detail/:dId" element={<DestinationDetail />}/>
+        <Route path="/Accomodation/detail/:cId" element={<AccomodationDetail />}/>
+        <Route path="/register" element={<Register/>} />
       </Routes>
         {/* Footer Template */}
         <Footer/>

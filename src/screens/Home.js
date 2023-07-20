@@ -113,13 +113,13 @@ export default function Home() {
             <div className="home">
                 <div className='post-container'>
                     {getNextPosts(current).map((post, index) => (
-                        <div key={post.id} className={`card ${index === 1 ? "card-middle" : ""}`} style={{ borderRadius: '30px', border: 'none' }}>
-                            {/* <div key={post.id} className={`card ${(clicks <= 1 && index === clicks) ? "card-middle" : ((clicks > 1 && index === 1) ? "card-middle" : "")}`} style={{ borderRadius: '30px', border: 'none'}}> */}
+                        <div key={post.id} className={`postcard ${index === 1 ? "postcard-middle" : ""}`} style={{ borderRadius: '30px', border: 'none' }}>
+                            {/* <div key={post.id} className={`postcard ${(clicks <= 1 && index === clicks) ? "postcard-middle" : ((clicks > 1 && index === 1) ? "postcard-middle" : "")}`} style={{ borderRadius: '30px', border: 'none'}}> */}
                             <img src={post.postImg} alt={post.name} />
-                            <div className="card-content">
+                            <div className="postcard-content">
                                 <h2>{post.name}</h2>
                                 <p>{post.content}</p>
-                                <div className="card-footer" style={{ borderBottomLeftRadius: '30px', borderBottomRightRadius: '30px', border: 'none' }}>
+                                <div className="postcard-footer" style={{ borderBottomLeftRadius: '30px', borderBottomRightRadius: '30px', border: 'none' }}>
                                     <p>Price: <span>$ {post.price}</span>/Person</p>
                                     <Link to="/booking">
                                         <button>Book Ticket</button>
