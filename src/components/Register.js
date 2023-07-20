@@ -1,8 +1,5 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
-import { Button } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
-import "react-phone-input-2/lib/bootstrap.css";
 
 const Register = () => {
     const [name, nameChange] = useState("");
@@ -72,7 +69,6 @@ const Register = () => {
                                         <input placeholder='Input your username here' required value={name} onChange={e => nameChange(e.target.value)} className="form-control"></input>
                                     </div>
                                 </div>
-
 
                                 <div className="col-lg-6">
                                     <div className="form-group">
