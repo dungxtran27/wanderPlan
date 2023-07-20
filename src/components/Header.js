@@ -21,7 +21,6 @@ export default function Header() {
       </nav>
       <div className="auth-links">
         <Link to="/register">Register</Link>
-
         <Popup modal trigger={<button className="loginbtn">Login</button>}>
           {(close) => <Login close={close} />}
         </Popup>
