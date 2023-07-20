@@ -8,7 +8,11 @@ const Book = () => {
   const [accomoType, setAccoType] = useState("1");
 
   const [accomoTypes, setAccoTypes] = useState([]);
+  const [accomo, setAcco] = useState("");
+  const [accomos, setAccos] = useState([]);
 
+  const [transport, setTransport] = useState("1");
+  const [transports, setTransports] = useState([]);
   const [transportType, setTransportType] = useState("1");
   const [transportTypes, setTransportTypes] = useState([]);
   const [date, setDate] = useState("");
@@ -16,10 +20,7 @@ const Book = () => {
   //setDestin(dId);
   const stats = false;
   const currId = sessionStorage.getItem("currId");
-  // const HandleSubmit = (e) => {};
-  // useEffect(() => {
-  //   setDestin(dId);
-  // }, [dId]);
+
   const Destination = dId;
   useEffect(() => {
     fetch(" http://localhost:9999/type")
@@ -35,8 +36,8 @@ const Book = () => {
       const rev = {
         uId: parseInt(currId),
         dId: parseInt(dId),
-        cId: parseInt(accomoType),
-        tId: parseInt(transportType),
+        cId: parseInt(accomo),
+        tId: parseInt(transport),
         date,
         stats,
       };
@@ -57,7 +58,7 @@ const Book = () => {
           });
       }
     },
-    [accomoType, transportType, date]
+    [accomo, transportType, date]
   );
   useEffect(() => {
     fetch(" http://localhost:9999/accomoType")
@@ -66,6 +67,20 @@ const Book = () => {
         setAccoTypes(data);
       });
   }, [accomoType]);
+  useEffect(() => {
+    fetch(" http://localhost:9999/Accomodation")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setAccos(data);
+      });
+  }, [accomo]);
+  useEffect(() => {
+    fetch(" http://localhost:9999/Transportation")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setTransports(data);
+      });
+  }, [transport]);
   // const handleAcco = (e) => {
   //   setAccoType(e.target.value, () => {
   //     setAccoType(e.target.value);
@@ -73,13 +88,13 @@ const Book = () => {
   //   console.log(accomoType);
   // };
   const handleAcco = (e) => {
-    setAccoType(e.target.value);
-    console.log(accomoType);
+    setAcco(e.target.value);
+    console.log(accomo);
   };
 
   const handleTransport = (e) => {
-    setTransportType(e.target.value);
-    console.log(transportType);
+    setTransport(e.target.value);
+    console.log(transport);
   };
   const handleDate = (e) => {
     setDate(e.target.value);
@@ -101,10 +116,21 @@ const Book = () => {
                         Accommodation: <span style={{ color: "red" }}>*</span>
                       </label>
                       <select onChange={handleAcco}>
+                        {accomos.map((a) =>
+                          a.dId === parseInt(dId) ? (
+                            <option value={a.id}>
+                              {a.dId === parseInt(dId) ? a.name : ""}
+                            </option>
+                          ) : (
+                            ""
+                          )
+                        )}
+                      </select>
+                      {/* <select onChange={handleAcco}>
                         {accomoTypes.map((a) => (
                           <option value={a.id}>{a.name}</option>
                         ))}
-                      </select>
+                      </select> */}
                     </div>
                   </div>
 
@@ -114,9 +140,13 @@ const Book = () => {
                         transport: <span style={{ color: "red" }}>*</span>
                       </label>
                       <select onChange={handleTransport}>
-                        {transportTypes.map((t) => (
-                          <option value={t.id}>{t.name}</option>
-                        ))}
+                        {transports.map((t) =>
+                          t.dId === parseInt(dId) ? (
+                            <option value={t.id}>{t.name}</option>
+                          ) : (
+                            ""
+                          )
+                        )}
                       </select>
                     </div>
                   </div>
