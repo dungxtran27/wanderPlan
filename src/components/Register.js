@@ -12,10 +12,10 @@ const Register = () => {
   const [phone, phoneChange] = useState("");
   const [address, addressChange] = useState("");
   const [dob, dobChange] = useState("");
-
+  const role = 2;
   const HandleSubmit = (e) => {
     e.preventDefault();
-    const User = { name, pass, avatar, email, phone, address, dob };
+    const User = { name, pass, avatar, email, phone, address, dob, role };
     // console.log(product);
     if (
       name.length === 0 ||

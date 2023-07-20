@@ -83,10 +83,10 @@ const AccomodationDetail = () => {
             {typeAc.map((ta) => (ta.id === a.type ? ta.name : ""))}
           </h4>
           <h4>Price: {a.price}</h4>
-          <h4>transport</h4>
+          <h4>Transport available:</h4>
           <ul>
             {transportation.map((t) =>
-              t.dId === a.id ? (
+              t.cId === a.id ? (
                 <li>
                   <Link to={"/Transportation/detail/" + t.id}>{t.name}</Link>
                 </li>

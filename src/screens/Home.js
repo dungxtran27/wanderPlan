@@ -132,7 +132,9 @@ export default function Home() {
             >
               <img src={post.postImg} alt={post.name} />
               <div className="card-content">
-                <h2>{post.name}</h2>
+                <h2>
+                  <Link to={"/Post/detail/" + post.id}> {post.name}</Link>
+                </h2>
                 <p>{post.content}</p>
                 <div
                   className="card-footer"
@@ -145,7 +147,7 @@ export default function Home() {
                   <p>
                     Price: <span>{post.price}</span>
                   </p>
-                  <Link to="/booking">
+                  <Link to={"/booking/" + post.dId}>
                     <button>Book Ticket</button>
                   </Link>
                 </div>

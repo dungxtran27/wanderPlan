@@ -21,6 +21,8 @@ import TransportEdit from "./components/TransportEdit";
 import AccomoEdit from "./components/AccomoEdit";
 import DestinEdit from "./components/DestinEdit";
 import UserEdit from "./components/UserEdit";
+import PostDetail from "./components/PostDetail";
+import Book from "./components/Booking";
 //toast.configure();
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
           path="/Transportation/detail/:tId"
           element={<TransportDetail />}
         />
+        <Route path="/Post/detail/:pId" element={<PostDetail />} />
         <Route path="/Transportation/edit/:tId" element={<TransportEdit />} />
         <Route path="/Accomodation/edit/:cId" element={<AccomoEdit />} />
         <Route path="/Destination/edit/:dId" element={<DestinEdit />} />
@@ -54,6 +57,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/User" element={<User />} />
+        <Route path="/booking/:dId" element={<Book />} />
       </Routes>
       {/* Footer Template */}
       <Footer />

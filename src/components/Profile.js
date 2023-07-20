@@ -103,6 +103,7 @@ const Profile = () => {
                 <th>accommodation</th>
                 <th>Transportation</th>
                 <th>date</th>
+                <th>status</th>
               </thead>
               <tbody>
                 {reservation.map((r) =>
@@ -122,6 +123,7 @@ const Profile = () => {
                         )}
                       </td>
                       <td>{r.date}</td>
+                      <td>{r.status === true ? "waiting" : "done"}</td>
                     </tr>
                   ) : (
                     ""

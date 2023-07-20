@@ -70,6 +70,7 @@ const TransportEdit = () => {
             onChange={handleChange}
           />
         </Form.Group>
+
         <Form.Group controlId="img">
           <Form.Label>image link</Form.Label>
           <Form.Control
