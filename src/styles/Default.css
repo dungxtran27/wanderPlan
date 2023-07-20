@@ -13,7 +13,7 @@
 
 .logo-section {
     flex: 1;
-    margin-left: 80px;
+    margin-left: 126px;
 }
 
 .nav-links {
@@ -38,7 +38,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 80px;
+    margin-right: 126px;
     align-items: center;
 }
 
@@ -61,7 +61,7 @@
     height: 280px;
     flex-shrink: 0;
     display: flex;
-    margin: 50px 79px 43px 80px;
+    margin: 50px 79px 43px 126px;
     justify-content: space-between;
     width: 84%;
 }
