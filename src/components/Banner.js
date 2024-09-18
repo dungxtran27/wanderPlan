@@ -14,24 +14,36 @@ const Banner = () => {
           destinations
         </h1>
         <p className="content">
-          With WanderPlan you can experience new travel and <br />
+          With Bleisure you can experience new travel and <br />
           the best tourist destinations that we have to offer
         </p>
         <Link to="/destination">
-        <button className="destination-button">
-          Our Destination
-          <span className="destination-button-arrow"><img src="/img/Continue.png" alt="arrow" style={{ width: '24px', height: '24px' }} /></span>
-        </button>
+          <button className="destination-button">
+            Our Destination
+            <span className="destination-button-arrow">
+              <img
+                src="/img/Continue.png"
+                alt="arrow"
+                style={{ width: "24px", height: "24px" }}
+              />
+            </span>
+          </button>
         </Link>
-        <Link to="/gallery">
-        <button className="gallery-button">
-        <span className="gallery-button-play"><img src="/img/play.png" alt="play" style={{ width: '24px', height: '24px' }} /></span>
-          Our Gallery
-        </button>
+        <Link to="/about">
+          <button className="gallery-button">
+            <span className="gallery-button-play">
+              <img
+                src="/img/play.png"
+                alt="play"
+                style={{ width: "24px", height: "24px" }}
+              />
+            </span>
+            Our Gallery
+          </button>
         </Link>
       </div>
       <div className="banner-image">
-        <img src="/img/Traveller1.png" alt="Banner"/>
+        <img src="/img/Traveller1.png" alt="Banner" />
       </div>
     </div>
   );

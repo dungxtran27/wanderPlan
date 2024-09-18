@@ -66,6 +66,8 @@ const PostDetail = () => {
       };
       if (cmt.length == 0) {
         alert("comment must not empty");
+      } else if (currId === null) {
+        alert("you must login to comment");
       } else {
         fetch("http://localhost:9999/postReview", {
           method: "POST",
@@ -125,7 +127,15 @@ const PostDetail = () => {
       <br />
       {review.map((rv) =>
         rv.postId == pId ? (
-          <p style={{ display: "block" }}>
+          <p
+            style={{
+              display: "block",
+              border: "1px solid black",
+              borderRadius: "20px",
+              padding: "10px",
+              backgroundColor: "#e6d4ddd9",
+            }}
+          >
             {user.map((u) =>
               u.id == rv.uId ? (
                 <p>

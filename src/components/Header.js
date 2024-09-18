@@ -16,13 +16,14 @@ export default function Header() {
     <div id="header">
       <div className="logo-section">
         <Link to="/">
-          <img src="/img/Logo.jpg" alt="Logo" style={{ height: "47px" }} />
+          <img src="/img/bleisure.png" alt="Logo" style={{ height: "70px" }} />
         </Link>
       </div>
       <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/Destination">Destination</Link>
+        <Link to="/about">Planning</Link>
         <Link to="/Accomodation">Accomodation</Link>
         <Link to="/Transportation">Transport</Link>
       </nav>
