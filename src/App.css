@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+*{margin:0px; padding: 0px;}
+
+.header-app{
+    background-color: purple;
+    line-height: 40px;
+}
+
+.header-app a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.header-app a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.link-active{
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    border-bottom: 3px solid red;
+}
+
+.home-component{
+    height: 400px;
+    text-align: center;
+    padding-top: 200px; ;
+}
+
+.footer-component{
+    text-align: center;
+    color: white;
+}
+
